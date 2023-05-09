@@ -1,5 +1,4 @@
 // Creates a class called `Part` that includes the following properties: partCategory, partType, quantity, and price.
-
 class Part {
     partCategory: string;
     partType: string;
