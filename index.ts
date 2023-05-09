@@ -35,7 +35,7 @@ let bolt: PartType = {
 // Create an array of parts
 let parts: PartType[] = [screw, nut, bolt]; // Array of PartType objects
 
-// Create a function that inserts the output into the DOM
+// Inserts the output into the DOM
 function insertIntoDOM(parts: PartType[]): void {
     let output: string = "";
     parts.forEach((part) => {
