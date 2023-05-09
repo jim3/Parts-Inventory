@@ -1,4 +1,3 @@
-// Insert the following code into the index.html file in the body tag
 
 // Part interface
 interface Part {
