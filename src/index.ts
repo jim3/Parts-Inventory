@@ -5,32 +5,25 @@ interface Part {
     price: number;
 }
 
-// PartType interface
-interface PartType extends Part {
+// PartType Class
+class PartType implements Part {
+    partCategory: string;
     partType: string;
+    quantity: number;
+    price: number;
+
+    constructor(partCategory: string, partType: string, quantity: number, price: number) {
+        this.partCategory = partCategory;
+        this.partType = partType;
+        this.quantity = quantity;
+        this.price = price;
+    }
 }
 
 // Create a part
-let screw: PartType = {
-    partCategory: "Screw",
-    partType: "Wood Screw",
-    quantity: 75,
-    price: 2.99,
-};
-
-let nut: PartType = {
-    partCategory: "Nut",
-    partType: "Hex Nut",
-    quantity: 150,
-    price: 5.5,
-};
-
-let bolt: PartType = {
-    partCategory: "Bolt",
-    partType: "Carriage Bolt",
-    quantity: 100,
-    price: 5.99,
-};
+let screw: PartType = new PartType("Screw", "Wood Screw", 75, 2.99);
+let nut: PartType = new PartType("Nut", "Hex Nut", 150, 5.5);
+let bolt: PartType = new PartType("Bolt", "Carriage Bolt", 100, 5.99);
 
 // Create an array of parts
 let parts: PartType[] = [screw, nut, bolt]; // Array of PartType objects
@@ -40,8 +33,8 @@ function insertIntoDOM(parts: PartType[]): void {
     let output: string = "";
     parts.forEach((part) => {
         output += `<div class="part">
-        <h3>Part Category: ${part.partCategory}</h3>
-        <h4>Part Type: ${part.partType}</h4>
+        <p>Part Category: ${part.partCategory}</p>
+        <p>Part Type: ${part.partType}</p>
         <p>Quantity: ${part.quantity}</p>
         <p>Price: ${part.price}</p>
         </div>`;
