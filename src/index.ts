@@ -1,12 +1,6 @@
-// Part interface
-interface Part {
-    partCategory: string;
-    quantity: number;
-    price: number;
-}
+// Creates a class called `Part` that includes the following properties: partCategory, partType, quantity, and price.
 
-// PartType Class
-class PartType implements Part {
+class Part {
     partCategory: string;
     partType: string;
     quantity: number;
@@ -20,16 +14,16 @@ class PartType implements Part {
     }
 }
 
-// Create a part
-let screw: PartType = new PartType("Screw", "Wood Screw", 75, 2.99);
-let nut: PartType = new PartType("Nut", "Hex Nut", 150, 5.5);
-let bolt: PartType = new PartType("Bolt", "Carriage Bolt", 100, 5.99);
+// Create a part object
+let screw: Part = new Part("Screw", "Wood Screw", 75, 2.99);
+let nut: Part = new Part("Nut", "Hex Nut", 150, 5.5);
+let bolt: Part = new Part("Bolt", "Carriage Bolt", 100, 5.99);
 
-// Create an array of parts
-let parts: PartType[] = [screw, nut, bolt]; // Array of PartType objects
+// Create an array of PartType objects
+let parts: Part[] = [screw, nut, bolt];
 
 // Inserts the output into the DOM
-function insertIntoDOM(parts: PartType[]): void {
+function insertIntoDOM(parts: Part[]): void {
     let output: string = "";
     parts.forEach((part) => {
         output += `<div class="part">
@@ -37,10 +31,10 @@ function insertIntoDOM(parts: PartType[]): void {
         <p>Part Type: ${part.partType}</p>
         <p>Quantity: ${part.quantity}</p>
         <p>Price: ${part.price}</p>
-        </div>`;
+        </div>
+        <code>---------------------------------</code>`;
     });
     document.body.innerHTML = output;
 }
 
-// caller
 insertIntoDOM(parts);
