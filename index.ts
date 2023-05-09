@@ -36,19 +36,6 @@ let bolt: PartType = {
 // Create an array of parts
 let parts: PartType[] = [screw, nut, bolt]; // Array of PartType objects
 
-// Create a function to display the parts
-function displayParts(parts: PartType[]): void {
-    parts.forEach((part) => {
-        console.log(`Part Category: ${part.partCategory}`);
-        console.log(`Part Type: ${part.partType}`);
-        console.log(`Quantity: ${part.quantity}`);
-        console.log(`Price: ${part.price}`);
-    });
-}
-
-// Display the parts
-displayParts(parts);
-
 // Create a function that inserts the output into the DOM
 function insertIntoDOM(parts: PartType[]): void {
     let output: string = "";
