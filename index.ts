@@ -1,4 +1,3 @@
-
 // Part interface
 interface Part {
     partCategory: string;
@@ -52,4 +51,3 @@ function insertIntoDOM(parts: PartType[]): void {
 
 // Insert the output into the DOM
 insertIntoDOM(parts);
-
