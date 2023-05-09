@@ -49,5 +49,5 @@ function insertIntoDOM(parts: PartType[]): void {
     document.body.innerHTML = output;
 }
 
-// Insert the output into the DOM
+// caller
 insertIntoDOM(parts);
